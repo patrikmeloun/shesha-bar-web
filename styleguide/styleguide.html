@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smokers – Styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color-bg:#0A0F0E;--color-bg-alt:#0D1715;--color-bg-navy:#0C1B2A;--color-surface:#142320;--color-surface-2:#1B2E2A;--color-border:#2B3D38;
+  --color-ink:#F0E9DA;--color-text-2:#B9B4A5;--color-text-muted:#8F8C7E;
+  --color-accent:#D2B98E;--color-accent-hover:#E2CDA6;--color-accent-pressed:#BFA578;--color-on-accent:#0A0F0E;
+  --color-forest:#1F3D35;--color-navy:#10263A;--color-sage:#8FB09C;--color-ember:#C47F55;
+  --color-success:#8BC4A0;--color-warning:#E3B35F;--color-error:#E58C7E;
+  --line-soft:rgba(240,233,218,.06);--line-strong:rgba(240,233,218,.32);--accent-wash:rgba(210,185,142,.12);--accent-line:rgba(210,185,142,.30);--focus-ring:0 0 0 3px rgba(210,185,142,.25);
+  --font-display:"Cormorant Garamond",Georgia,serif;--font-text:"Quicksand",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fs-display:clamp(2.5rem,1.6rem + 3.6vw,3.8125rem);--fs-h2:clamp(1.9375rem,1.5rem + 1.5vw,2.4375rem);--fs-h3:clamp(1.25rem,1.1rem + .6vw,1.5625rem);--fs-lead:clamp(1.125rem,1.05rem + .3vw,1.25rem);
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;
+  --radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px;
+  --ease:cubic-bezier(0.22,1,0.36,1);--dur-micro:150ms;--dur-standard:300ms;--dur-page:600ms;
+  --page-margin:20px;--section-gap:64px;
+}
+@media(min-width:640px){:root{--page-margin:40px}}
+@media(min-width:1024px){:root{--page-margin:64px;--section-gap:96px}}
+
+*{box-sizing:border-box}
+html{background:var(--color-bg);color-scheme:dark;scroll-behavior:smooth}
+body{margin:0;background:var(--color-bg);color:var(--color-ink);font-family:var(--font-text);font-weight:500;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--font-display);font-style:italic;font-weight:500;margin:0}
+h1{font-size:var(--fs-display);line-height:1.05;letter-spacing:-.01em}
+h2{font-size:var(--fs-h2);line-height:1.15;letter-spacing:-.005em}
+h3{font-weight:600;font-size:var(--fs-h3);line-height:1.3;margin:0}
+p{margin:0}
+.caption{font-size:12px;line-height:1.4;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-2)}
+.small{font-size:14px;line-height:1.5;color:var(--color-text-2)}
+a{color:var(--color-accent);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+a:hover{color:var(--color-accent-hover)}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--page-margin)}
+section{padding:var(--section-gap) 0;border-top:1px solid var(--color-border)}
+section:nth-of-type(even){background:var(--color-bg-alt)}
+.sec-head{display:flex;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-7);flex-wrap:wrap}
+.sec-head .no{font-family:var(--font-display);font-style:italic;font-size:var(--fs-h2);color:var(--color-accent)}
+.sub{margin:var(--space-7) 0 var(--space-4)}
+.grid{display:grid;gap:24px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.mono{font-variant-numeric:tabular-nums;font-size:12px;color:var(--color-text-2);letter-spacing:.02em}
+
+/* hero */
+.hero{padding:var(--space-9) 0 var(--space-8);background:radial-gradient(900px 400px at 80% 0%,rgba(31,61,53,.55),transparent 70%),var(--color-bg);border:0}
+.hero .lead{font-size:var(--fs-lead);line-height:1.5;color:var(--color-text-2);max-width:52ch;margin-top:var(--space-5)}
+.hero .meta{margin-top:var(--space-6);display:flex;gap:var(--space-4);flex-wrap:wrap}
+.toc{display:flex;gap:var(--space-2);flex-wrap:wrap;margin-top:var(--space-7)}
+.toc a{text-decoration:none;font-size:14px;font-weight:600;color:var(--color-text-2);border:1px solid var(--color-border);padding:6px 14px;border-radius:999px;transition:all var(--dur-micro) var(--ease)}
+.toc a:hover{color:var(--color-accent);border-color:var(--color-accent)}
+
+/* swatches */
+.sw{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line-soft);background:var(--color-surface)}
+.sw .chip{height:96px;display:flex;align-items:flex-end;padding:12px;font-weight:700;font-size:13px}
+.sw .info{padding:12px 16px 16px}
+.sw .info b{display:block;font-weight:700}
+.sw .info code{font-family:inherit;font-size:13px;color:var(--color-text-2)}
+.sw .info .small{display:block;margin-top:4px}
+
+/* type */
+.spec{display:grid;grid-template-columns:140px 1fr;gap:16px 24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--color-border)}
+.spec .mono{line-height:1.5}
+@media(max-width:640px){.spec{grid-template-columns:1fr;gap:6px}}
+
+/* spacing */
+.sp{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+.sp i{display:block;height:16px;background:var(--color-accent);border-radius:4px}
+.sp span{width:48px}
+
+/* components */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 28px;border-radius:999px;font:700 16px var(--font-text);cursor:pointer;text-decoration:none;border:1px solid transparent;transition:background var(--dur-micro) var(--ease),border-color var(--dur-micro) var(--ease),color var(--dur-micro) var(--ease),transform var(--dur-micro) var(--ease)}
+.btn:focus-visible{outline:2px solid var(--color-ink);outline-offset:2px}
+.btn-primary{background:var(--color-accent);color:var(--color-on-accent)}
+.btn-primary:hover{background:var(--color-accent-hover);color:var(--color-on-accent);transform:translateY(-1px)}
+.btn-primary:active{background:var(--color-accent-pressed);transform:none}
+.btn-secondary{background:transparent;color:var(--color-ink);border-color:var(--line-strong)}
+.btn-secondary:hover{border-color:var(--color-accent);color:var(--color-accent);background:var(--accent-wash)}
+.btn[disabled]{background:var(--color-border);color:var(--color-text-muted);cursor:not-allowed;transform:none}
+.field{display:grid;gap:8px}
+.field label{font-size:14px;font-weight:600;color:var(--color-text-2)}
+.input{height:48px;padding:0 16px;border-radius:var(--radius-md);background:var(--color-surface);border:1px solid var(--color-border);color:var(--color-ink);font:500 16px var(--font-text);transition:border-color var(--dur-micro) var(--ease),box-shadow var(--dur-micro) var(--ease);width:100%}
+.input::placeholder{color:var(--color-text-muted)}
+.input:focus,.input.is-focus{outline:0;border-color:var(--color-accent);box-shadow:var(--focus-ring)}
+.input.is-error{border-color:var(--color-error)}
+.err{font-size:14px;color:var(--color-error)}
+.card{padding:24px;background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:background var(--dur-standard) var(--ease),border-color var(--dur-standard) var(--ease)}
+.card:hover{background:var(--color-surface-2);border-color:var(--accent-line)}
+.price{font-weight:600;font-variant-numeric:tabular-nums;color:var(--color-text-2);font-size:14px}
+.drink{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:25px;line-height:1.2;margin:4px 0 8px}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--accent-wash);color:var(--color-accent);border:1px solid var(--accent-line);font:700 12px/1.4 var(--font-text);letter-spacing:.12em;text-transform:uppercase}
+.badge.forest{background:var(--color-forest);color:var(--color-sage);border-color:transparent}
+.badge.age{background:transparent;color:var(--color-ink);border-color:var(--line-strong)}
+.badge.ember{background:rgba(196,127,85,.14);color:var(--color-ember);border-color:rgba(196,127,85,.35)}
+.stack{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.demo{padding:var(--space-6);border:1px dashed var(--color-border);border-radius:var(--radius-lg);background:var(--color-bg)}
+
+/* nav demo */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 24px;height:72px;background:rgba(10,15,14,.72);border:1px solid var(--color-border);border-radius:var(--radius-lg);flex-wrap:wrap}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav li a{display:block;padding:24px 0 20px;color:var(--color-ink);text-decoration:none;font-weight:600;border-bottom:2px solid transparent}
+.nav li a.on,.nav li a:hover{color:var(--color-accent);border-color:var(--color-accent)}
+.lang{border:1px solid var(--color-border);border-radius:var(--radius-md);padding:6px 14px;font-weight:700;font-size:14px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-style:italic;font-weight:600;font-size:28px;color:var(--color-ink);line-height:1}
+.logo svg{flex:none}
+
+/* info row */
+.info-row{display:flex;gap:40px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.info-row .blk .caption{display:block;text-transform:none;letter-spacing:0;font-size:14px;font-weight:500;margin-bottom:2px}
+.info-row .blk .val{font-size:20px;font-weight:600}
+.feat{display:grid;grid-template-columns:40px 1fr;gap:4px 16px}
+.feat .ic{grid-row:span 2;width:40px;height:40px;border-radius:50%;background:var(--color-forest);display:grid;place-items:center;color:var(--color-sage)}
+
+/* footer */
+.foot{background:var(--color-bg-navy);border-radius:var(--radius-lg);padding:32px;border:1px solid var(--color-border)}
+.foot .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px}
+.foot .bottom{margin-top:32px;padding-top:16px;border-top:1px solid rgba(240,233,218,.12);display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;align-items:center}
+
+/* images */
+.ph{position:relative;overflow:hidden;background:
+  radial-gradient(120px 90px at 70% 25%,rgba(210,185,142,.55),transparent 70%),
+  radial-gradient(200px 160px at 20% 80%,rgba(31,61,53,.95),transparent 70%),
+  linear-gradient(160deg,#16231f,#0a0f0e)}
+.ph::after{content:attr(data-r);position:absolute;left:12px;bottom:10px;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--color-text-2)}
+.arch{border-radius:999px 999px 16px 16px}
+.r-16{border-radius:16px}.r-24{border-radius:24px}
+
+/* dos */
+.do,.dont{padding:20px 24px;border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-surface)}
+.do b{color:var(--color-success)}.dont b{color:var(--color-error)}
+.rules{counter-reset:r;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.rules li{counter-increment:r;display:grid;grid-template-columns:40px 1fr;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--color-border)}
+.rules li::before{content:counter(r);font-family:var(--font-display);font-style:italic;font-size:25px;color:var(--color-accent)}
+
+/* motion */
+.mo{display:grid;gap:20px}
+.track{height:48px;border-radius:999px;background:var(--color-surface);border:1px solid var(--color-border);position:relative;overflow:hidden}
+.dot{position:absolute;top:8px;left:8px;width:30px;height:30px;border-radius:50%;background:var(--color-accent);animation:slide var(--d) var(--ease) infinite alternate}
+@keyframes slide{from{left:8px}to{left:calc(100% - 38px)}}
+@media(prefers-reduced-motion:reduce){.dot{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="logo" style="margin-bottom:48px">
+      <svg width="34" height="40" viewBox="0 0 34 40" fill="none" stroke="#D2B98E" stroke-width="1.5" stroke-linecap="round"><path d="M2 39V17a15 15 0 0 1 30 0v22"/><path d="M22 11c-6-3-12 0-10 5s9 5 9 11-7 7-11 4"/></svg>
+      Smokers
+    </div>
+    <p class="caption">Styleguide · verze 1.0 (návrh) · 16. 10. 2026</p>
+    <h1 style="margin-top:12px">Zpomal.<br>Nadechni se.</h1>
+    <p class="lead">Šisha &amp; cocktail lounge. Tmavě zelená, hluboká modrá, černá a teplá béžová. Klidné, útulné, dospělé.</p>
+    <div class="meta"><span class="badge">Tykáme</span><span class="badge forest">Mobile first</span><span class="badge age">18+</span></div>
+    <nav class="toc">
+      <a href="#s1">1 Brand</a><a href="#s2">2 Logo</a><a href="#s3">3 Barvy</a><a href="#s4">4 Typografie</a><a href="#s5">5 Grid</a><a href="#s6">6 Komponenty</a><a href="#s7">7 Obraz</a><a href="#s8">8 Motion</a><a href="#s9">9 Pravidla</a>
+    </nav>
+  </div>
+</header>
+
+<section id="s1"><div class="wrap">
+  <div class="sec-head"><span class="no">1</span><h2>Brand základ</h2></div>
+  <div class="grid g2">
+    <div class="card"><p class="caption">Název &amp; tagline</p><p class="drink">Smokers</p><p class="small">Šisha &amp; cocktail lounge · claim: „Zpomal. Nadechni se."</p></div>
+    <div class="card"><p class="caption">Osobnost</p><div class="stack" style="margin-top:12px"><span class="badge">klidná</span><span class="badge">útulná</span><span class="badge">dospělá</span><span class="badge">hravě elegantní</span><span class="badge">pozorná</span></div></div>
+    <div class="card"><p class="caption">Tone of voice (návrh)</p><p style="margin-top:8px">Tykáme. Krátké věty. Smysly: vůně, chuť, kouř. Bez výkřičníků a „kámo".</p><p class="small" style="margin-top:8px">„Máme pro tebe stůl. Zbytek je na tobě."</p></div>
+    <div class="card"><p class="caption">Pocit v první vteřině</p><p style="margin-top:8px">Tady se dá vydechnout. Velká fotka prostoru, jemný kouř, jedno tlačítko: <i style="font-family:var(--font-display);font-size:20px">Rezervovat stůl</i>.</p></div>
+  </div>
+</div></section>
+
+<section id="s2"><div class="wrap">
+  <div class="sec-head"><span class="no">2</span><h2>Logo</h2></div>
+  <div class="grid g2">
+    <div class="demo" style="display:grid;place-items:center;min-height:200px">
+      <div class="logo" style="font-size:48px;gap:16px">
+        <svg width="52" height="62" viewBox="0 0 34 40" fill="none" stroke="#D2B98E" stroke-width="1.3" stroke-linecap="round"><path d="M2 39V17a15 15 0 0 1 30 0v22"/><path d="M22 11c-6-3-12 0-10 5s9 5 9 11-7 7-11 4"/></svg>
+        Smokers
+      </div>
+    </div>
+    <div class="demo" style="display:grid;place-items:center;min-height:200px;background:var(--color-accent)">
+      <div class="logo" style="font-size:48px;gap:16px;color:var(--color-on-accent)">
+        <svg width="52" height="62" viewBox="0 0 34 40" fill="none" stroke="#0A0F0E" stroke-width="1.3" stroke-linecap="round"><path d="M2 39V17a15 15 0 0 1 30 0v22"/><path d="M22 11c-6-3-12 0-10 5s9 5 9 11-7 7-11 4"/></svg>
+        Smokers
+      </div>
+    </div>
+    <div class="demo" style="display:flex;gap:24px;align-items:center">
+      <div style="width:64px;height:64px;border-radius:16px;background:var(--color-forest);display:grid;place-items:center">
+        <svg width="34" height="40" viewBox="0 0 34 40" fill="none" stroke="#D2B98E" stroke-width="1.5" stroke-linecap="round"><path d="M2 39V17a15 15 0 0 1 30 0v22"/><path d="M22 11c-6-3-12 0-10 5s9 5 9 11-7 7-11 4"/></svg>
+      </div>
+      <div><b>Favicon / značka</b><p class="small">1 : 1, Forest podklad, linka Accent. Min. 24 px (favicon 32 px).</p></div>
+    </div>
+    <div class="card">
+      <p class="caption">Pravidla</p>
+      <p class="small" style="margin-top:8px">Ochranná zóna: výška velkého „S" kolem dokola. Min. wordmark 96 px (tisk 25 mm). <b style="color:var(--color-error)">Zakázáno:</b> deformace, stíny a záře, neonové barvy, barvy mimo paletu, rušivé pozadí bez ztmavení.</p>
+      <p class="small" style="margin-top:8px;color:var(--color-text-muted)">Logo je návrh – nahradit finálním.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="s3"><div class="wrap">
+  <div class="sec-head"><span class="no">3</span><h2>Barvy</h2></div>
+  <p class="caption">Plochy</p>
+  <div class="grid g4" style="margin-top:12px">
+    <div class="sw"><div class="chip" style="background:#0A0F0E;color:#F0E9DA">Aa</div><div class="info"><b>Background</b><code>#0A0F0E</code><span class="small">hlavní podklad</span></div></div>
+    <div class="sw"><div class="chip" style="background:#0D1715;color:#F0E9DA">Aa</div><div class="info"><b>Background alt</b><code>#0D1715</code><span class="small">střídání sekcí</span></div></div>
+    <div class="sw"><div class="chip" style="background:#0C1B2A;color:#F0E9DA">Aa</div><div class="info"><b>Background navy</b><code>#0C1B2A</code><span class="small">rezervace, patička</span></div></div>
+    <div class="sw"><div class="chip" style="background:#142320;color:#F0E9DA">Aa</div><div class="info"><b>Surface</b><code>#142320</code><span class="small">karty, header</span></div></div>
+    <div class="sw"><div class="chip" style="background:#1B2E2A;color:#F0E9DA">Aa</div><div class="info"><b>Surface 2</b><code>#1B2E2A</code><span class="small">hover, dropdown</span></div></div>
+    <div class="sw"><div class="chip" style="background:#2B3D38;color:#F0E9DA">Aa</div><div class="info"><b>Border</b><code>#2B3D38</code><span class="small">linky</span></div></div>
+  </div>
+
+  <p class="caption sub">Text &amp; akcent</p>
+  <div class="grid g4">
+    <div class="sw"><div class="chip" style="background:#F0E9DA;color:#0A0F0E">16.0 : 1</div><div class="info"><b>Ink</b><code>#F0E9DA</code><span class="small">hlavní text</span></div></div>
+    <div class="sw"><div class="chip" style="background:#B9B4A5;color:#0A0F0E">9.3 : 1</div><div class="info"><b>Text secondary</b><code>#B9B4A5</code><span class="small">popisky</span></div></div>
+    <div class="sw"><div class="chip" style="background:#8F8C7E;color:#0A0F0E">5.7 : 1</div><div class="info"><b>Text muted</b><code>#8F8C7E</code><span class="small">placeholdery · ne na Surface 2</span></div></div>
+    <div class="sw"><div class="chip" style="background:#D2B98E;color:#0A0F0E">10.2 : 1</div><div class="info"><b>Accent</b><code>#D2B98E</code><span class="small">CTA, odkazy – jediná akční</span></div></div>
+    <div class="sw"><div class="chip" style="background:#E2CDA6;color:#0A0F0E">12.4 : 1</div><div class="info"><b>Accent hover</b><code>#E2CDA6</code></div></div>
+    <div class="sw"><div class="chip" style="background:#BFA578;color:#0A0F0E">pressed</div><div class="info"><b>Accent pressed</b><code>#BFA578</code></div></div>
+  </div>
+
+  <p class="caption sub">Sekundární paleta</p>
+  <div class="grid g4">
+    <div class="sw"><div class="chip" style="background:#1F3D35;color:#F0E9DA">Forest</div><div class="info"><code>#1F3D35</code><span class="small">plochy, ikony v kruhu, favicon</span></div></div>
+    <div class="sw"><div class="chip" style="background:#10263A;color:#F0E9DA">Navy</div><div class="info"><code>#10263A</code><span class="small">karty v navy sekcích</span></div></div>
+    <div class="sw"><div class="chip" style="background:#8FB09C;color:#0A0F0E">Sage</div><div class="info"><code>#8FB09C</code><span class="small">dekor, linky, „volno"</span></div></div>
+    <div class="sw"><div class="chip" style="background:#C47F55;color:#0A0F0E">Ember</div><div class="info"><code>#C47F55</code><span class="small">1 drobný detail, nikdy CTA</span></div></div>
+  </div>
+
+  <p class="caption sub">Feedback</p>
+  <div class="grid g3">
+    <div class="sw"><div class="chip" style="background:#8BC4A0;color:#0A0F0E">Success</div><div class="info"><code>#8BC4A0</code></div></div>
+    <div class="sw"><div class="chip" style="background:#E3B35F;color:#0A0F0E">Warning</div><div class="info"><code>#E3B35F</code></div></div>
+    <div class="sw"><div class="chip" style="background:#E58C7E;color:#0A0F0E">Error</div><div class="info"><code>#E58C7E</code></div></div>
+  </div>
+  <p class="small" style="margin-top:24px">Pravidlo kontrastu: text min. WCAG AA (4.5 : 1). Poměry výše jsou vůči Background.</p>
+</div></section>
+
+<section id="s4"><div class="wrap">
+  <div class="sec-head"><span class="no">4</span><h2>Typografie</h2></div>
+  <div class="grid g2" style="margin-bottom:24px">
+    <div class="card"><p class="caption">Display font</p><p style="font-family:var(--font-display);font-style:italic;font-weight:500;font-size:61px;line-height:1.05;margin:8px 0">Cormorant Garamond</p><p class="small">Italic 500 / 600 · nadpisy, hero, názvy drinků · jen od 25 px výš</p></div>
+    <div class="card"><p class="caption">Text font</p><p style="font-weight:600;font-size:39px;line-height:1.15;margin:8px 0">Quicksand</p><p class="small">500 / 600 / 700 · body, navigace, UI · ne 300 ani 400</p></div>
+  </div>
+  <div class="spec"><div class="mono">Display<br>61 / 1.05 · −1 %<br>mobil 40</div><h1>Zpomal. <span style="color:var(--color-accent)">Nadechni se.</span></h1></div>
+  <div class="spec"><div class="mono">H2<br>39 / 1.15 · −0.5 %<br>mobil 31</div><h2>Naše signature drinky</h2></div>
+  <div class="spec"><div class="mono">H3 · Quicksand 600<br>25 / 1.3<br>mobil 20</div><h3>Šisha směsi na míru</h3></div>
+  <div class="spec"><div class="mono">Lead · 500<br>20 / 1.5</div><p style="font-size:20px;line-height:1.5">Pomalý večer, příjemná společnost a vůně, která se vám bude vracet.</p></div>
+  <div class="spec"><div class="mono">Body · 500<br>16 / 1.65</div><p>Smokers je klidné místo uprostřed města. Sedněte si do měkkého křesla, dejte si doutnající uhlík a nechte večer plynout vlastním tempem.</p></div>
+  <div class="spec"><div class="mono">Small · 500<br>14 / 1.5</div><p class="small">Otevřeno denně 16:00 – 02:00 · Alkohol a vodní dýmky pouze 18+</p></div>
+  <div class="spec"><div class="mono">Caption · 700<br>12 / 1.4 · +12 %</div><p class="caption">Novinka · Sezónní nabídka</p></div>
+  <p class="small" style="margin-top:16px">Škála: poměr 1,25 (major third) od 16 px: 16 → 20 → 25 → 31 → 39 → 49 → 61. Small a Caption jsou pevné UI velikosti.</p>
+</div></section>
+
+<section id="s5"><div class="wrap">
+  <div class="sec-head"><span class="no">5</span><h2>Grid &amp; spacing</h2></div>
+  <div class="grid g3" style="margin-bottom:32px">
+    <div class="card"><p class="caption">Šířka</p><p class="drink">1440 / 1200</p><p class="small">návrh / max kontejner</p></div>
+    <div class="card"><p class="caption">Sloupce</p><p class="drink">12 · 8 · 4</p><p class="small">gutter 24 px · okraj 64 / 40 / 20</p></div>
+    <div class="card"><p class="caption">Breakpointy</p><p class="drink">640 · 1024 · 1280</p><p class="small">header 72 px (60 po scrollu)</p></div>
+  </div>
+  <p class="caption" style="margin-bottom:16px">Spacing škála (4 px)</p>
+  <div class="sp"><span class="mono">4</span><i style="width:4px"></i></div>
+  <div class="sp"><span class="mono">8</span><i style="width:8px"></i></div>
+  <div class="sp"><span class="mono">12</span><i style="width:12px"></i></div>
+  <div class="sp"><span class="mono">16</span><i style="width:16px"></i></div>
+  <div class="sp"><span class="mono">24</span><i style="width:24px"></i></div>
+  <div class="sp"><span class="mono">32</span><i style="width:32px"></i></div>
+  <div class="sp"><span class="mono">48</span><i style="width:48px"></i></div>
+  <div class="sp"><span class="mono">64</span><i style="width:64px"></i></div>
+  <div class="sp"><span class="mono">96</span><i style="width:96px"></i></div>
+  <div class="sp"><span class="mono">128</span><i style="width:128px"></i></div>
+  <p class="small" style="margin-top:16px">Vertikální rytmus sekcí: 96 px desktop / 64 px mobil · radius: 8 · 16 · 24 · pill · arch</p>
+</div></section>
+
+<section id="s6"><div class="wrap">
+  <div class="sec-head"><span class="no">6</span><h2>Komponenty</h2></div>
+
+  <p class="caption">Tlačítka</p>
+  <div class="demo stack" style="margin-top:12px">
+    <a class="btn btn-primary" href="#s6">Rezervovat stůl</a>
+    <a class="btn btn-secondary" href="#s6">Zobrazit menu</a>
+    <button class="btn btn-primary" disabled>Nedostupné</button>
+  </div>
+  <p class="small" style="margin-top:8px">48 px · padding 0 28 · radius pill · hover: světlejší + 1 px nahoru (najeď myší).</p>
+
+  <p class="caption sub">Formulář</p>
+  <div class="demo grid g3">
+    <div class="field"><label>Jméno</label><input class="input" placeholder="Jan Novák"></div>
+    <div class="field"><label>Počet osob</label><input class="input is-focus" value="4"></div>
+    <div class="field"><label>Telefon</label><input class="input is-error" value="737 55"><span class="err">Zadej celé telefonní číslo.</span></div>
+  </div>
+
+  <p class="caption sub">Karty menu (cena nahoře, inspirace The Lux)</p>
+  <div class="grid g3">
+    <div class="card"><span class="price">180 Kč</span><p class="drink">Sofia's Rose</p><p class="small">Gin, růže, citron, tonic.</p></div>
+    <div class="card"><span class="price">180 Kč</span><p class="drink">Forest Fizz</p><p class="small">Bylinky, limetka, soda.</p></div>
+    <div class="card"><span class="price">450 Kč</span><p class="drink">Mint &amp; Grape</p><p class="small">Šisha · mátová svěžest, bílé hrozny.</p></div>
+  </div>
+
+  <p class="caption sub">Badge</p>
+  <div class="stack"><span class="badge">Doporučujeme</span><span class="badge forest">Šisha</span><span class="badge ember">Novinka</span><span class="badge age">18+</span></div>
+
+  <p class="caption sub">Navigace</p>
+  <div class="nav">
+    <div class="logo" style="font-size:24px"><svg width="22" height="26" viewBox="0 0 34 40" fill="none" stroke="#D2B98E" stroke-width="2" stroke-linecap="round"><path d="M2 39V17a15 15 0 0 1 30 0v22"/><path d="M22 11c-6-3-12 0-10 5s9 5 9 11-7 7-11 4"/></svg>Smokers</div>
+    <ul><li><a class="on" href="#s6">Hlavní stránka</a></li><li><a href="#s6">Menu</a></li><li><a href="#s6">Rezervace</a></li><li><a href="#s6">Kontakt</a></li></ul>
+    <div class="lang">CZ ⌄</div>
+  </div>
+  <p class="small" style="margin-top:8px">Sticky · blur 12 px · po scrollu 72 → 60 px + spodní linka. Mobil: burger → celoobrazovkové menu v Cormorant italic.</p>
+
+  <p class="caption sub">Info řádek (inspirace Kaleean) &amp; Proč k nám (inspirace Foukárna)</p>
+  <div class="demo">
+    <div class="info-row">
+      <div class="blk"><span class="caption">Adresa</span><span class="val">Doplň ulici, Praha</span><div class="small"><a href="#s6">Zobrazit na mapě</a></div></div>
+      <div class="blk"><span class="caption">Telefon</span><span class="val">+420 000 000 000</span><div class="small"><a href="#s6">Zavolat</a></div></div>
+      <div class="blk"><span class="caption">Otevřeno</span><span class="val">16:00 – 02:00</span><div class="small">denně</div></div>
+      <a class="btn btn-primary" href="#s6">Rezervovat stůl</a>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:24px">
+    <div class="feat"><div class="ic">◐</div><h3>Soukromé akce</h3><p class="small">Oslavy a schůzky v prostoru jen pro vás.</p></div>
+    <div class="feat"><div class="ic">◍</div><h3>Šisha na míru</h3><p class="small">Poradíme s chutí podle nálady.</p></div>
+  </div>
+
+  <p class="caption sub">Footer</p>
+  <div class="foot">
+    <div class="cols">
+      <div><div class="logo" style="font-size:24px">Smokers</div><p class="small" style="margin-top:8px">Zpomal. Nadechni se.</p></div>
+      <div><p class="caption">Adresa &amp; hodiny</p><p class="small" style="margin-top:8px">Doplň adresu<br>Denně 16:00 – 02:00</p></div>
+      <div><p class="caption">Kontakt</p><p class="small" style="margin-top:8px">+420 000 000 000<br>ahoj@smokers.cz</p></div>
+      <div><p class="caption">Sleduj nás</p><p class="small" style="margin-top:8px"><a href="#s6">Instagram</a> · <a href="#s6">Facebook</a></p></div>
+    </div>
+    <div class="bottom"><span class="small">© Smokers · Ochrana osobních údajů</span><span class="stack"><span class="badge age">18+</span><span class="small">Alkohol a vodní dýmky podáváme jen osobám starším 18 let.</span></span></div>
+  </div>
+</div></section>
+
+<section id="s7"><div class="wrap">
+  <div class="sec-head"><span class="no">7</span><h2>Obrazový jazyk</h2></div>
+  <p class="caption">Poměry a ořezy (placeholdery)</p>
+  <div class="grid g4" style="margin-top:12px;align-items:end">
+    <div class="ph arch" data-r="ARCH 3:4" style="aspect-ratio:3/4"></div>
+    <div class="ph r-16" data-r="4:5 · radius 16" style="aspect-ratio:4/5"></div>
+    <div class="ph r-24" data-r="3:2 · radius 24" style="aspect-ratio:3/2"></div>
+    <div class="ph r-16" data-r="1:1 thumbnail" style="aspect-ratio:1/1"></div>
+  </div>
+  <div class="ph r-24" data-r="HERO 16:9 · radius 24" style="aspect-ratio:16/9;margin-top:24px"></div>
+
+  <div class="grid g2" style="margin-top:32px">
+    <div class="card"><p class="caption">Styl fotek</p><p class="small" style="margin-top:8px">Low-key, teplé měkké světlo, jemný kouř, detaily a šikmé záběry prostoru (Deem). Odsycené, stíny do zelené/teal. Bez pózujících stock obličejů. Max. 3 arch ořezy na obrazovku.</p></div>
+    <div class="card">
+      <p class="caption">Ilustrace &amp; ikony</p>
+      <svg viewBox="0 0 160 120" width="100%" height="120" fill="none" stroke="#D2B98E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="margin-top:8px">
+        <path d="M30 20h50l-25 32zM55 52v34M40 88h30"/><circle cx="48" cy="30" r="2"/><circle cx="60" cy="36" r="1.5"/>
+        <path d="M110 30c0 14-10 22-18 26 0 10 8 16 18 18 10-2 18-8 18-18-8-4-18-12-18-26z" opacity=".9"/><path d="M110 74v22M98 98h24"/>
+        <path d="M140 14c-4 4 4 8 0 12" />
+      </svg>
+      <p class="small">Tenká linka Accent 1,25 px, ručně kreslené sklenice a šisha. Ikony: Lucide, 1,5 px, 24 px.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="s8"><div class="wrap">
+  <div class="sec-head"><span class="no">8</span><h2>Motion</h2></div>
+  <div class="grid g2">
+    <div class="mo">
+      <div><p class="caption" style="margin-bottom:8px">Micro · 150 ms</p><div class="track"><div class="dot" style="--d:150ms"></div></div></div>
+      <div><p class="caption" style="margin-bottom:8px">Standard · 300 ms</p><div class="track"><div class="dot" style="--d:300ms"></div></div></div>
+      <div><p class="caption" style="margin-bottom:8px">Page · 600 ms</p><div class="track"><div class="dot" style="--d:600ms"></div></div></div>
+    </div>
+    <div class="card">
+      <p class="caption">Easing</p><p class="drink">cubic-bezier(0.22, 1, 0.36, 1)</p>
+      <p class="small"><b style="color:var(--color-success)">Animuje se:</b> hover, scroll reveal (fade + 16 px nahoru, stagger 60 ms), header při scrollu, jemný kouř v hero (opacity ≤ 0,12, smyčka 30–40 s).</p>
+      <p class="small" style="margin-top:8px"><b style="color:var(--color-error)">Neanimuje se:</b> text při čtení, layout shifty, ceny a stavy rezervace. Respektuje <code>prefers-reduced-motion</code>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="s9"><div class="wrap">
+  <div class="sec-head"><span class="no">9</span><h2>Pravidla</h2></div>
+  <div class="grid g2" style="margin-bottom:32px">
+    <div class="do"><b>Dělej</b><p class="small" style="margin-top:8px">Jedna akční barva · Ink místo bílé · italic jen v nadpisech · arch ořezy fotek · upozornění 18+ · tykání v klidném tónu.</p></div>
+    <div class="dont"><b>Nedělej</b><p class="small" style="margin-top:8px">Neon a glow · čistě bílá/černá · víc než jedno CTA · klišé lebky a kouř · stock úsměvy · blikající animace.</p></div>
+  </div>
+  <ol class="rules">
+    <li>Žádné barvy mimo paletu; jediná akční barva je Accent.</li>
+    <li>Žádné hodnoty mimo spacing a radius škálu.</li>
+    <li>Žádná čistě bílá (#FFF) a čistě černá (#000) – vždy Ink a Background.</li>
+    <li>Kurzíva (Cormorant) jen v nadpisech, názvech drinků a cenách v lístku.</li>
+    <li>Max. jedno primární CTA na obrazovku (Rezervovat stůl).</li>
+    <li>Fotky vždy ztmavit/sladit do palety; text na fotce jen přes overlay 4.5 : 1.</li>
+    <li>Každá stránka s alkoholem/šisha nese upozornění 18+.</li>
+    <li>Žádný neon, žádná záře, žádné gradienty mimo jemný přechod Background → Background alt.</li>
+    <li>Mobile first: Rezervovat a Zavolat vždy na jedno tapnutí.</li>
+    <li>Dotykové plochy min. 44 × 44 px.</li>
+  </ol>
+</div></section>
+
+<footer style="padding:48px 0;border-top:1px solid var(--color-border)"><div class="wrap small">Smokers styleguide v1.0 (návrh) · Patrik Meloun · 16. 10. 2026</div></footer>
+</body>
+</html>

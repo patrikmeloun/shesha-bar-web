@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="cs" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rezervace – Smokers</title>
+<meta name="description" content="Rezervuj si stůl ve Smokers online.">
+<meta name="theme-color" content="#0A0F0E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Přeskočit na obsah</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Smokers – domů">
+      <svg width="22" height="26" viewBox="0 0 34 40" fill="none" stroke="#D2B98E" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 39V17a15 15 0 0 1 30 0v22"/><path d="M22 11c-6-3-12 0-10 5s9 5 9 11-7 7-11 4"/></svg>
+      Smokers
+    </a>
+    <ul class="nav">
+      <li><a href="index.html">Hlavní stránka</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="rezervace.html" aria-current="page">Rezervace</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn btn-primary header-cta" href="rezervace.html">Rezervovat stůl</a>
+    <button class="burger" aria-label="Otevřít menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<div class="mobile-menu" role="dialog" aria-label="Menu">
+  <div class="top"><span class="logo">Smokers</span><button class="burger close" aria-label="Zavřít menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <ul>
+    <li><a href="index.html">Hlavní stránka</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="rezervace.html" aria-current="page">Rezervace</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a class="btn btn-primary" href="rezervace.html">Rezervovat stůl</a>
+</div>
+
+<main id="main">
+<div class="wrap page-head">
+  <span class="caption accent">Rezervace</span>
+  <h1>Rezervuj <span class="accent">stůl</span></h1>
+  <p class="lead" style="max-width:52ch">Vyplň pár údajů a my ti potvrdíme termín. Pro skupiny nad 10 lidí nebo soukromé akce nám radši zavolej.</p>
+</div>
+<section style="padding-top:var(--space-6)"><div class="wrap res-layout">
+  <div>
+    <form id="reservation" class="form-card" novalidate>
+      <div class="form-grid">
+        <div class="field"><label for="name">Jméno</label><input class="input" id="name" name="name" autocomplete="name" placeholder="Jan Novák" aria-describedby="name-err"><span class="err" id="name-err" role="alert"></span></div>
+        <div class="field"><label for="phone">Telefon</label><input class="input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+420 000 000 000" aria-describedby="phone-err"><span class="err" id="phone-err" role="alert"></span></div>
+        <div class="field full"><label for="email">E-mail (nepovinný)</label><input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="jan@email.cz" aria-describedby="email-err"><span class="err" id="email-err" role="alert"></span></div>
+        <div class="field"><label for="date">Datum</label><input class="input" id="date" name="date" type="date" aria-describedby="date-err"><span class="err" id="date-err" role="alert"></span></div>
+        <div class="field"><label for="time">Čas</label><input class="input" id="time" name="time" type="time" min="16:00" step="900" aria-describedby="time-err"><span class="err" id="time-err" role="alert"></span></div>
+        <div class="field full"><label for="guests">Počet osob</label><input class="input" id="guests" name="guests" type="number" min="1" max="20" value="2" inputmode="numeric" aria-describedby="guests-err"><span class="err" id="guests-err" role="alert"></span></div>
+        <div class="field full"><label for="note">Poznámka (nepovinná)</label><textarea class="input" id="note" name="note" placeholder="Oslava, preferovaná šisha, alergie…"></textarea></div>
+        <div class="field full"><label class="check"><input type="checkbox" id="age" name="age"><span>Potvrzuji, že mi je 18 a více let.</span></label><span class="err" id="age-err" role="alert"></span></div>
+        <div class="full"><button class="btn btn-primary" type="submit">Odeslat rezervaci</button></div>
+      </div>
+    </form>
+    <div class="form-ok" role="status">
+      <h2>Děkujeme, <span class="accent">máme to.</span></h2>
+      <p id="summary" class="lead" style="color:var(--color-ink)"></p>
+      <p class="small" style="margin-top:8px;color:var(--color-ink)">Ozveme se ti s potvrzením. (Ukázka – formulář zatím není napojený na server.)</p>
+    </div>
+  </div>
+  <aside class="aside">
+    <div class="card"><p class="caption">Otevřeno</p><p class="drink">16:00 – 02:00</p><p class="small">Denně (návrh).</p></div>
+    <div class="card"><p class="caption">Radši zavolat?</p><p class="drink"><a href="tel:+420000000000" style="text-decoration:none">+420 000 000 000</a></p><p class="small">Doplnit ulici, Praha</p></div>
+  </aside>
+</div></section>
+</main>
+
+<footer class="site-footer" id="kontakt">
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="index.html">Smokers</a><p class="small" style="margin-top:12px">Zpomal. Nadechni se.</p></div>
+      <div><p class="caption">Adresa &amp; hodiny</p><p class="small">Doplnit ulici, Praha<br>Denně 16:00 – 02:00 (návrh)</p></div>
+      <div><p class="caption">Kontakt</p><p class="small"><a href="tel:+420000000000">+420 000 000 000</a><br><a href="mailto:ahoj@smokers.cz">ahoj@smokers.cz</a></p></div>
+      <div><p class="caption">Sleduj nás</p><p class="small"><a href="#">Instagram</a> · <a href="#">Facebook</a></p></div>
+    </div>
+    <div class="bottom"><span class="small">© 2026 Smokers · <a href="#">Ochrana osobních údajů</a></span><span style="display:flex;gap:12px;align-items:center"><span class="badge age">18+</span><span class="small">Alkohol a vodní dýmky podáváme jen osobám starším 18 let.</span></span></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Smokers — design tokens v1.0 (návrh) */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Quicksand:wght@500;600;700&display=swap&subset=latin,latin-ext");
+
+:root {
+  /* Colors – surfaces */
+  --color-bg: #0A0F0E;
+  --color-bg-alt: #0D1715;
+  --color-bg-navy: #0C1B2A;
+  --color-surface: #142320;
+  --color-surface-2: #1B2E2A;
+  --color-border: #2B3D38;
+
+  /* Colors – text */
+  --color-ink: #F0E9DA;
+  --color-text-2: #B9B4A5;
+  --color-text-muted: #8F8C7E; /* ne na surface-2 */
+
+  /* Colors – accent */
+  --color-accent: #D2B98E;
+  --color-accent-hover: #E2CDA6;
+  --color-accent-pressed: #BFA578;
+  --color-on-accent: #0A0F0E;
+
+  /* Colors – secondary */
+  --color-forest: #1F3D35;
+  --color-navy: #10263A;
+  --color-sage: #8FB09C;
+  --color-ember: #C47F55;
+
+  /* Colors – feedback */
+  --color-success: #8BC4A0;
+  --color-warning: #E3B35F;
+  --color-error: #E58C7E;
+
+  /* Colors – alpha helpers */
+  --line-soft: rgba(240, 233, 218, .06);
+  --line-strong: rgba(240, 233, 218, .32);
+  --accent-wash: rgba(210, 185, 142, .12);
+  --accent-line: rgba(210, 185, 142, .30);
+  --focus-ring: 0 0 0 3px rgba(210, 185, 142, .25);
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", Georgia, serif; /* jen italic 500/600 */
+  --font-text: "Quicksand", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-display: clamp(2.5rem, 1.6rem + 3.6vw, 3.8125rem); /* 40 → 61 */
+  --fs-h2: clamp(1.9375rem, 1.5rem + 1.5vw, 2.4375rem);  /* 31 → 39 */
+  --fs-h3: clamp(1.25rem, 1.1rem + .6vw, 1.5625rem);     /* 20 → 25 */
+  --fs-lead: clamp(1.125rem, 1.05rem + .3vw, 1.25rem);   /* 18 → 20 */
+  --fs-body: 1rem;      /* 16 */
+  --fs-small: .875rem;  /* 14 */
+  --fs-caption: .75rem; /* 12 */
+
+  --lh-display: 1.05;
+  --lh-h2: 1.15;
+  --lh-h3: 1.3;
+  --lh-lead: 1.5;
+  --lh-body: 1.65;
+  --lh-small: 1.5;
+  --lh-caption: 1.4;
+
+  --ls-display: -0.01em;
+  --ls-h2: -0.005em;
+  --ls-body: 0;
+  --ls-caption: 0.12em;
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Layout */
+  --container: 1200px;
+  --container-wide: 1440px;
+  --gutter: 24px;
+  --page-margin: 20px;           /* mobil */
+  --section-gap: 64px;           /* mobil */
+  --header-h: 64px;              /* mobil */
+  --header-h-scrolled: 56px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-micro: 150ms;
+  --dur-standard: 300ms;
+  --dur-page: 600ms;
+
+  /* Control sizes */
+  --control-h: 48px;
+  --tap-min: 44px;
+}
+
+@media (min-width: 640px) {
+  :root { --page-margin: 40px; }
+}
+@media (min-width: 1024px) {
+  :root {
+    --page-margin: 64px;
+    --section-gap: 96px;
+    --header-h: 72px;
+    --header-h-scrolled: 60px;
+  }
+}
+
+/* Base */
+html { background: var(--color-bg); color-scheme: dark; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 { font-family: var(--font-display); font-style: italic; font-weight: 500; margin: 0; }
+h1 { font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: var(--ls-display); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
+h3 { font-family: var(--font-text); font-weight: 600; font-size: var(--fs-h3); line-height: var(--lh-h3); margin: 0; }
+.caption { font-size: var(--fs-caption); line-height: var(--lh-caption); font-weight: 700; letter-spacing: var(--ls-caption); text-transform: uppercase; }
+.arch { border-radius: var(--radius-pill) var(--radius-pill) var(--radius-md) var(--radius-md); overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

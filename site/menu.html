@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="cs" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu – Smokers</title>
+<meta name="description" content="Šisha, koktejly a domácí limonády v Smokers.">
+<meta name="theme-color" content="#0A0F0E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Přeskočit na obsah</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Smokers – domů">
+      <svg width="22" height="26" viewBox="0 0 34 40" fill="none" stroke="#D2B98E" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 39V17a15 15 0 0 1 30 0v22"/><path d="M22 11c-6-3-12 0-10 5s9 5 9 11-7 7-11 4"/></svg>
+      Smokers
+    </a>
+    <ul class="nav">
+      <li><a href="index.html">Hlavní stránka</a></li>
+      <li><a href="menu.html" aria-current="page">Menu</a></li>
+      <li><a href="rezervace.html">Rezervace</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn btn-primary header-cta" href="rezervace.html">Rezervovat stůl</a>
+    <button class="burger" aria-label="Otevřít menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<div class="mobile-menu" role="dialog" aria-label="Menu">
+  <div class="top"><span class="logo">Smokers</span><button class="burger close" aria-label="Zavřít menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <ul>
+    <li><a href="index.html">Hlavní stránka</a></li>
+    <li><a href="menu.html" aria-current="page">Menu</a></li>
+    <li><a href="rezervace.html">Rezervace</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a class="btn btn-primary" href="rezervace.html">Rezervovat stůl</a>
+</div>
+
+<main id="main">
+<div class="wrap page-head">
+  <span class="caption accent">Nabídka</span>
+  <h1>Menu</h1>
+  <p class="lead" style="max-width:52ch">Šisha, drinky a limonády. Ukázkové položky a ceny (návrh) – po schválení nahradíme skutečným lístkem.</p>
+</div>
+<section style="padding-top:var(--space-6)"><div class="wrap">
+  <div class="tabs" role="tablist" aria-label="Kategorie menu">
+    <button class="tab" role="tab" data-tab="sisha">Šisha</button>
+    <button class="tab" role="tab" data-tab="koktejly">Koktejly</button>
+    <button class="tab" role="tab" data-tab="limonady">Limonády</button>
+    <button class="tab" role="tab" data-tab="ostatni">Ostatní</button>
+  </div>
+  <div class="panel" id="sisha" role="tabpanel"><svg class="ill" viewBox="0 0 44 44" fill="none" stroke="#D2B98E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;margin-bottom:8px"><path d="M20 4h4v8h-4zM14 14h16l-2 6H16zM22 20v8"/><path d="M12 38c0-6 4-10 10-10s10 4 10 10z"/></svg><div class="menu-list"><div class="item"><h3>Klasika Máta</h3><span class="p">380 Kč</span><p>Svěží máta, čistá a jemná.</p></div><div class="item"><h3>Dvojitá jablka</h3><span class="p">380 Kč</span><p>Sladko-kyselá, kořenitá klasika.</p></div><div class="item"><h3>Modrá hodina</h3><span class="p">420 Kč</span><p>Borůvka, máta a ledový závan.</p></div><div class="item"><h3>Zahradní broskev</h3><span class="p">420 Kč</span><p>Broskev, bílý čaj, kapka medu.</p></div><div class="item"><h3>Vodní meloun</h3><span class="p">400 Kč</span><p>Šťavnatý meloun s citrusem.</p></div><div class="item"><h3>Šisha bez tabáku</h3><span class="p">380 Kč</span><p>Bylinná směs, jemná chuť.</p></div></div><p class="note">Cena zahrnuje jednu hlavu a výměnu uhlíků. Doplnění hlavy za příplatek (návrh).</p></div>
+  <div class="panel" id="koktejly" role="tabpanel" hidden><svg class="ill" viewBox="0 0 44 44" fill="none" stroke="#D2B98E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;margin-bottom:8px"><path d="M8 8h28L22 24zM22 24v14M14 38h16"/></svg><div class="menu-list"><div class="item"><h3>Zelený les</h3><span class="p">210 Kč</span><p>Gin, bazalka, okurka, limetka, tonic.</p></div><div class="item"><h3>Kouřový Old Fashioned</h3><span class="p">240 Kč</span><p>Bourbon, hořčiny, dubový kouř.</p></div><div class="item"><h3>Béžový sen</h3><span class="p">220 Kč</span><p>Rum, vanilka, kokos, espresso.</p></div><div class="item"><h3>Modrá noc</h3><span class="p">210 Kč</span><p>Vodka, borůvka, citron, soda.</p></div><div class="item"><h3>Aperol Spritz</h3><span class="p">190 Kč</span><p>Aperol, prosecco, soda, pomeranč.</p></div><div class="item"><h3>Gin &amp; Tonic</h3><span class="p">180 Kč</span><p>Gin dle výběru, tonic, bylinka.</p></div></div></div>
+  <div class="panel" id="limonady" role="tabpanel" hidden><svg class="ill" viewBox="0 0 44 44" fill="none" stroke="#D2B98E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;margin-bottom:8px"><path d="M12 6h20v20a10 10 0 0 1-20 0zM12 14h20"/><path d="M26 2l-4 12"/></svg><div class="menu-list"><div class="item"><h3>Domácí limonáda</h3><span class="p">95 Kč</span><p>Čerstvý citrus, med a bylinky dne.</p></div><div class="item"><h3>Lavender Fizz</h3><span class="p">105 Kč</span><p>Levandule, citron, soda.</p></div><div class="item"><h3>Zázvorová</h3><span class="p">105 Kč</span><p>Zázvor, limetka, třtinový cukr.</p></div><div class="item"><h3>Okurkovo-mátová</h3><span class="p">95 Kč</span><p>Okurka, máta, limetka.</p></div></div></div>
+  <div class="panel" id="ostatni" role="tabpanel" hidden><svg class="ill" viewBox="0 0 44 44" fill="none" stroke="#D2B98E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;margin-bottom:8px"><path d="M10 14h20v12a8 8 0 0 1-16 0M30 18h4a4 4 0 0 1 0 8h-4"/></svg><div class="menu-list"><div class="item"><h3>Točená Kofola 0,4 l</h3><span class="p">55 Kč</span><p></p></div><div class="item"><h3>Pivo čepované 0,5 l</h3><span class="p">65 Kč</span><p>Dva druhy, ptej se obsluhy.</p></div><div class="item"><h3>Čaj konvička</h3><span class="p">85 Kč</span><p>Výběr sypaných čajů.</p></div><div class="item"><h3>Espresso / Flat white</h3><span class="p">65 Kč</span><p></p></div></div></div>
+  <p class="note" style="margin-top:var(--space-7)">Alkohol a vodní dýmky podáváme jen osobám starším 18 let. Alergeny na dotaz u obsluhy.</p>
+  <div style="margin-top:var(--space-7)"><a class="btn btn-primary" href="rezervace.html">Rezervovat stůl</a></div>
+</div></section>
+</main>
+
+<footer class="site-footer" id="kontakt">
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="index.html">Smokers</a><p class="small" style="margin-top:12px">Zpomal. Nadechni se.</p></div>
+      <div><p class="caption">Adresa &amp; hodiny</p><p class="small">Doplnit ulici, Praha<br>Denně 16:00 – 02:00 (návrh)</p></div>
+      <div><p class="caption">Kontakt</p><p class="small"><a href="tel:+420000000000">+420 000 000 000</a><br><a href="mailto:ahoj@smokers.cz">ahoj@smokers.cz</a></p></div>
+      <div><p class="caption">Sleduj nás</p><p class="small"><a href="#">Instagram</a> · <a href="#">Facebook</a></p></div>
+    </div>
+    <div class="bottom"><span class="small">© 2026 Smokers · <a href="#">Ochrana osobních údajů</a></span><span style="display:flex;gap:12px;align-items:center"><span class="badge age">18+</span><span class="small">Alkohol a vodní dýmky podáváme jen osobám starším 18 let.</span></span></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
